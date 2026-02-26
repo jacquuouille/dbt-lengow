@@ -1,24 +1,25 @@
 {{ config(
     materialized='incremental',
-    unique_key=['product_id'],
+    unique_key=['shop_id', 'product_id'],
     incremental_strategy='merge'
 ) }}
 
 with source as (
 
-    select * from {{ source('jaffle', 'clients_products') }}
+    select * from {{ source('jaffle', 'market_products') }}
 
 ), transformed as (
 
     select
+        shop_id,
         id as product_id,
         title as title,
         price,
         stock_availability,
-        main_category,
         is_active,
-        cast(updated_at as timestamp) as updated_at
-    from source
+        updated_at,
+        cast(failed_to_update_at as timestamp) as failed_to_update_at
+    from source 
 
 )
 

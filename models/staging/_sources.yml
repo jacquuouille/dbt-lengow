@@ -10,36 +10,36 @@ sources:
         description: Clients products data with basic cleaning and transformations applies, one row per client's product.
         columns:
           - name: id 
-            description: The primary key of the client's product.
-            data_tests:
-              - not_null
-              - unique
+            description: The primary key of the client's product. 
           - name: title
             description: The title of the client's product.
           - name: price
-            description: The price of the client's product.
-            data_tests:
-              - not_null
-              - unique:
-                  config:
-                    where: "price > 0"
+            description: The price of the client's product. 
           - name: stock_availability
-            description: The stock availability of the client's product.
-            data_tests:
-              - accepted_values:
-                  arguments:
-                    values: [true, false]
-                    quote: false
+            description: The stock availability of the client's product. 
           - name: main_category
             description: The main category of the client's product.
           - name: is_active
-            description: Whether the client's product is active or not.
-            data_tests:
-              - accepted_values:
-                  arguments:
-                    values: [true, false]
-                    quote: false
+            description: Whether the client's product is active or not. 
           - name: updated_at
-            description: The timestamp of the last update of the client's product.
-            data_tests:
-              - not_null
+            description: The timestamp of the last update of the client's product. 
+
+      - name: market_products
+        description: Market products data with basic cleaning and transformations applies, one row per market product.
+        columns:
+          - name: shop_id
+            description: The primary key of the shop.
+          - name: id
+            description: The primary key of the market product. 
+          - name: title
+            description: The title of the market product.
+          - name: price
+            description: The price of the market product. 
+          - name: stock_availability
+            description: The stock availability of the market product. 
+          - name: is_active
+            description: Whether the market product is active or not. 
+          - name: updated_at
+            description: The timestamp of the last update of the market product.  
+          - name: failed_to_update
+            description: Whether the market product failed to update or not.
