@@ -1,6 +1,11 @@
+{{ config(
+    materialized='incremental',
+    unique_key=['matching_id']
+) }}
+
 with clients_products as (
 
-        select * from {{ ref('stg_clients_products') }}
+    select * from {{ ref('stg_clients_products') }}
 
 ), 
 
@@ -24,3 +29,7 @@ matched as (
 )
 
 select * from matched
+
+{% if is_incremental() %}
+    where matching_id not in (select matching_id from {{ this }})
+{% endif %}
