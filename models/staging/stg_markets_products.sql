@@ -19,7 +19,7 @@ transformed as (
         price,
         cast(stock_availability as boolean) as stock_availability,
         cast(is_active as boolean) as is_active,
-        updated_at,
+        cast(updated_at as timestamp) as updated_at,
         cast(failed_to_update_at as timestamp) as failed_to_update_at
     from source 
 

@@ -19,7 +19,7 @@ transformed as (
         cast(stock_availability as boolean) as stock_availability,
         main_category,
         cast(is_active as boolean) as is_active,
-        updated_at
+        cast(updated_at as timestamp) as updated_at
     from source
 
 )
