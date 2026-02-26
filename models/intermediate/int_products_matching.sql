@@ -18,13 +18,18 @@ markets_products as (
 matched as (
 
     select
-        md5(c.product_id || '-' || m.shop_id || '-' || m.product_id) as matching_id, -- md5 hash of the concatenated keys to create a unique identifier for the match
-        c.product_id as client_product_id, 
-        m.shop_id,
-        m.product_id as market_product_id,
+        md5(cp.product_id || '-' || mp.shop_id || '-' || mp.product_id) as matching_id, -- md5 hash of the concatenated keys to create a unique identifier for the match
+        cp.product_id,
+        cp.title as title,
+        cp.main_category as category,
+        cp.price as client_price,
+        cp.stock_availability as client_stock,
+        mp.shop_id as market_shop_id, 
+        mp.price as market_price,
+        mp.stock_availability as market_stock,
         current_timestamp() as matched_at 
-    from clients_products c
-    join markets_products m on c.product_id = m.product_id -- using an inner join to find matches based on product_id, meaning all clients's products available in the market will be included in the result
+    from clients_products cp
+    join markets_products mp on cp.product_id = mp.product_id -- using an inner join to find matches based on product_id, meaning all clients's products available in the market will be included in the result
 
 )
 
