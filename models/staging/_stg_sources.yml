@@ -45,6 +45,12 @@ sources:
 
       - name: stg_markets_products
         description: Market products data with basic cleaning and transformations applies, one row per market product.
+        data_tests:
+          - dbt_utils.unique_combination_of_columns:
+              arguments:
+                combination_of_columns: 
+                  - shop_id
+                  - product_id
         columns:
           - name: shop_id
             description: The primary key of the shop.
