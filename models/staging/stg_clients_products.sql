@@ -1,3 +1,10 @@
+{{ config(
+    materialized = 'incremental',
+    unique_key = 'client_product_id',
+    incremental_strategy = 'merge',
+) }}
+
+
 with source as (
 
     select * from {{ source('jaffle', 'clients_products') }}

@@ -20,6 +20,9 @@ sources:
             description: The price of the client's product.
             data_tests:
               - not_null
+              - unique:
+                  config:
+                    where: "price > 0"
           - name: stock_availability
             description: The stock availability of the client's product.
             data_tests:
