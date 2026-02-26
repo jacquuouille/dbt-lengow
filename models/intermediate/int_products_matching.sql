@@ -24,9 +24,11 @@ matched as (
         cp.main_category as category,
         cp.price as client_price,
         cp.stock_availability as client_stock,
+        cp.is_active as client_active,
         mp.shop_id as market_shop_id, 
         mp.price as market_price,
         mp.stock_availability as market_stock,
+        mp.is_active as market_active,
         current_timestamp() as matched_at 
     from clients_products cp
     join markets_products mp on cp.product_id = mp.product_id -- using an inner join to find matches based on product_id, meaning all clients's products available in the market will be included in the result
