@@ -14,10 +14,10 @@ with source as (
         id as product_id,
         title as title,
         price,
-        stock_availability,
+        cast(stock_availability as boolean) as stock_availability,
         main_category,
-        is_active,
-        cast(updated_at as timestamp) as updated_at
+        cast(is_active as boolean) as is_active,
+        updated_at
     from source
 
 )
