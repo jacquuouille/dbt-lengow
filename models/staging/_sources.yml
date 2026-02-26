@@ -26,6 +26,7 @@ sources:
               - accepted_values:
                   arguments:
                     values: [true, false]
+                    quote: false
           - name: main_category
             description: The main category of the client's product.
           - name: is_active
@@ -34,6 +35,7 @@ sources:
               - accepted_values:
                   arguments:
                     values: [true, false]
+                    quote: false
           - name: updated_at
             description: The timestamp of the last update of the client's product.
             data_tests:
