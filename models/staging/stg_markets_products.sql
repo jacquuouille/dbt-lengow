@@ -8,7 +8,9 @@ with source as (
 
     select * from {{ source('jaffle', 'market_products') }}
 
-), transformed as (
+), 
+
+transformed as (
 
     select
         shop_id,
