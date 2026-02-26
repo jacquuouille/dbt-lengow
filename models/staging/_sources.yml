@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: jaffle
+    database: jaffle-shop-481609
+    schema: jaffle
+    description: Three main sources tables available in the Lengow data warehouse
+    tables:
+      - name: clients_products
+        description: Clients products data with basic cleaning and transformations applies, one row per client's product.
+        columns:
+          - name: id 
+            description: The primary key of the client's product.
+            data_tests:
+              - not_null
+              - unique
+          - name: title
+            description: The title of the client's product.
+          - name: price
+            description: The price of the client's product.
+            data_tests:
+              - not_null
+          - name: stock_availability
+            description: The stock availability of the client's product.
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: [true, false]
+          - name: main_category
+            description: The main category of the client's product.
+          - name: is_active
+            description: Whether the client's product is active or not.
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: [true, false]
+          - name: updated_at
+            description: The timestamp of the last update of the client's product.
+            data_tests:
+              - not_null
