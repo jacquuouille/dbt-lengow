@@ -70,6 +70,10 @@ models:
         description: Count of instances where products in the category are 'losing' in terms of price competitiveness, indicating the number of times products in that category are priced higher than the market price, which can help identify areas where the client may be less competitive and may need to adjust pricing strategies. 
       - name: rank
         description: Ranking of product categories based on their non-competitiveness count, with a lower rank indicating a higher count of 'losing' instances, allowing for easy identification of the least competitive categories.
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= 10" 
 
   - name: fct_top_10_most_competitive_client_products
     description: Fact table identifying the top 10 most competitive product categories based on the count of 'winning' price competitiveness results.
@@ -80,3 +84,7 @@ models:
         description: Count of instances where products in the category are 'winning' in terms of price competitiveness, indicating the number of times products in that category are priced lower than the market price, which can help identify areas where the client is more competitive and may have a pricing advantage. 
       - name: rank
         description: Ranking of product categories based on their competitiveness count, with a lower rank indicating a higher count of 'winning' instances, allowing for easy identification of the most competitive categories.
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= 10"
