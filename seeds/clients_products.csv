@@ -1,0 +1,6 @@
+id,title,price,stock_availability,main_category,is_active,updated_at
+P1001,Wireless Mouse,19.99,TRUE,Electronics,TRUE,2026-02-20 10:15:00
+P1002,Mechanical Keyboard,89.5,TRUE,Electronics,TRUE,2026-02-21 09:30:00
+P1003,Stainless Steel Water Bottle,24,FALSE,Home,TRUE,2026-02-18 14:05:00
+P1004,Running Shoes - Model X,120,TRUE,Sports,FALSE,2026-02-15 16:40:00
+P1005,Desk Lamp,35.75,TRUE,Home,TRUE,2026-02-22 11:10:00
