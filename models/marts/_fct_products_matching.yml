@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: fct_products_matching
+    description: |
+      Fact table capturing product-level matching between client prices and market prices.
+      Includes metrics like price difference, price percentage difference, price ratio, and a
+      price comparison result (winning/losing/tie) to assess the client's competitive positioning.
+    tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "client_price - market_price = price_difference"
+    columns:
+      - name: matching_id
+        description: Unique identifier for the product match.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_products_matching')
+                field: matching_id
+      - name: product_id
+        description: Identifier for the product.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_products_matching')
+                field: product_id
+      - name: title
+        description: Product title or name.
+      - name: category
+        description: Product category.
+      - name: client_price
+        description: Price of the product on the client's platform.
+        tests: 
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"
+      - name: market_price
+        description: Price of the product in the market.
+        tests: 
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0" 
+      - name: client_stock
+        description: Number of items available on the client's side.
+      - name: market_stock
+        description: Number of items available in the market.
+      - name: price_difference
+        description: Calculating the price difference between the client's price and the market price to identify potential pricing opportunities or discrepancies
+      - name: price_difference_percentage
+        description: Price difference in percentage.
+      - name: price_ratio
+        description: Calculating the price ratio to understand how the client's price compares to the market price, with a ratio less than 1 indicating a cheaper price and greater than 1 indicating a more expensive price
+      - name: price_comparison_result
+        description: Measuring the share of matches where the client product is 'winning' (cheapest) vs 'losing' (more expensive) compared to the market price, providing insights into the client's competitive positioning in the market.
+        tests:
+           - accepted_values:
+                arguments:
+                  column: price_comparison_result
+                  values: ['winning', 'losing', 'tie']  

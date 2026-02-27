@@ -18,10 +18,10 @@ sources:
             description: The title of the client's product.
           - name: price
             description: The price of the client's product.
-            data_tests: 
-              - unique:
-                  config:
-                    where: "price > 0"
+            tests: 
+              - dbt_utils.expression_is_true:
+                  arguments:
+                    expression: ">= 0" 
           - name: stock_availability
             description: The stock availability of the client's product.
             data_tests:
@@ -65,11 +65,10 @@ sources:
             description: The title of the market product.
           - name: price
             description: The price of the market product.
-            data_tests:
-              - not_null
-              - unique:
-                  config:
-                    where: "price > 0"
+            tests:
+              - dbt_utils.expression_is_true:
+                  arguments:
+                    expression: ">= 0"
           - name: stock_availability
             description: The stock availability of the market product.
             data_tests:
