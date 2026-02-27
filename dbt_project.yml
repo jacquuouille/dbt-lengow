@@ -36,5 +36,9 @@ models:
   dbt_lengow:
     staging:
       +materialized: incremental
+    intermediate:
+      +materialized: incremental
+    marts:
+      +materialized: table
 
     
