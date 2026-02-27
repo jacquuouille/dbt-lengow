@@ -39,7 +39,7 @@ metrics as (
             when client_price < market_price then 'winning' 
             when client_price > market_price then 'losing'
             when client_price = market_price then 'tie'
-        end as price_comparison_result
+        end as price_competitiveness
     
     from filtered
 

@@ -53,10 +53,30 @@ models:
         description: Price difference in percentage.
       - name: price_ratio
         description: Calculating the price ratio to understand how the client's price compares to the market price, with a ratio less than 1 indicating a cheaper price and greater than 1 indicating a more expensive price
-      - name: price_comparison_result
+      - name: price_competitiveness
         description: Measuring the share of matches where the client product is 'winning' (cheapest) vs 'losing' (more expensive) compared to the market price, providing insights into the client's competitive positioning in the market.
         tests:
            - accepted_values:
                 arguments:
                   column: price_comparison_result
                   values: ['winning', 'losing', 'tie']  
+
+  - name: fct_top_10_least_competitive_product_categories
+    description: Fact table identifying the top 10 least competitive product categories based on the count of 'losing' price competitiveness results.
+    columns:
+      - name: category
+        description: Product category.
+      - name: noncompetitive_count
+        description: Count of instances where products in the category are 'losing' in terms of price competitiveness, indicating the number of times products in that category are priced higher than the market price, which can help identify areas where the client may be less competitive and may need to adjust pricing strategies. 
+      - name: rank
+        description: Ranking of product categories based on their non-competitiveness count, with a lower rank indicating a higher count of 'losing' instances, allowing for easy identification of the least competitive categories.
+
+  - name: fct_top_10_most_competitive_client_products
+    description: Fact table identifying the top 10 most competitive product categories based on the count of 'winning' price competitiveness results.
+    columns:
+      - name: category
+        description: Product category.
+      - name: competitive_count
+        description: Count of instances where products in the category are 'winning' in terms of price competitiveness, indicating the number of times products in that category are priced lower than the market price, which can help identify areas where the client is more competitive and may have a pricing advantage. 
+      - name: rank
+        description: Ranking of product categories based on their competitiveness count, with a lower rank indicating a higher count of 'winning' instances, allowing for easy identification of the most competitive categories.
