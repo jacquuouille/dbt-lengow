@@ -1,5 +1,6 @@
 {{ config(
     materialized='incremental',
+    incremental_strategy='merge',
     unique_key=['matching_id']
 ) }}
 
@@ -36,7 +37,3 @@ matched as (
 )
 
 select * from matched
-
-{% if is_incremental() %}
-    where matching_id not in (select matching_id from {{ this }})
-{% endif %}
