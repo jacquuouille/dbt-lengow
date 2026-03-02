@@ -31,4 +31,10 @@ Check it out here (there is more)
 ![Page 1](screenshots/page_1_dashboard.png)
 ![Page 2](screenshots/page_2_dashboard.png)
 
+<p align="center">
+  <img src="screenshots/page_1_dashboard.png" width="45%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/page_2_dashboard.png" width="45%" />
+</p>
+
 
