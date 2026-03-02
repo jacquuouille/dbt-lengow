@@ -2,6 +2,8 @@
 
 The goal of this project is to design the end-to-end solution to a client, from data extraction to dashboard creation. The final output will allow the client to self-serve answers to recurring questions about how
 their prices compare to competitors in the market.
+
+![Lineage](screenshots/lineage.png)
   
 ### To explore lineage and metadata:
 
