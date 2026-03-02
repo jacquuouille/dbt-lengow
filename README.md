@@ -1,7 +1,15 @@
 Welcome to your new dbt project!
-> Data modelling for analysis and visualisation
+> Designing the end-to-end solution, from data extraction to dashboard creation. The final output will allow the client to self-serve answers to recurring questions about how
+their prices compare to competitors in the market.
+  
+### To explore lineage and metadata:
 
-### Using the starter project
+dbt docs generate
+dbt docs serve
 
-Try running the following commands:
-- dbt build
+This opens an interactive documentation site with:
+
+model descriptions
+column definitions
+data tests
+lineage graph
