@@ -58,8 +58,8 @@ models:
         tests:
            - accepted_values:
                 arguments:
-                  column: price_comparison_result
-                  values: ['winning', 'losing', 'tie']  
+                  column: price_competitiveness
+                  values: ['Competitive', 'Overpriced', 'Price Match']  
 
   - name: fct_top_10_least_competitive_product_categories
     description: Fact table identifying the top 10 least competitive product categories based on the count of 'losing' price competitiveness results.

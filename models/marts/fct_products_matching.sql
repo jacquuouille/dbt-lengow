@@ -36,9 +36,9 @@ metrics as (
             client_price / market_price, 2) as price_ratio,
         
         case 
-            when client_price < market_price then 'winning' 
-            when client_price > market_price then 'losing'
-            when client_price = market_price then 'tie'
+            when client_price < market_price then 'Competitive' 
+            when client_price > market_price then 'Overpriced'
+            when client_price = market_price then 'Price Match'
         end as price_competitiveness
     
     from filtered
