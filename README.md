@@ -20,10 +20,9 @@ dbt docs serve
 - Understand business logic implemented in each model
 
 ### In particular, the Data Model section provides a clear overview of:
-- The list of analytical tables and views 
+- The list of analytical tables
 - Their business purpose and intended use
 - Key metrics and transformations applied
-- This ensures full transparency of the transformation layer and makes it easy for stakeholders and analysts to understand how data is structured and how each model should be used.
 
 ## 📈 Exploring Dashboard
 The dashboard is built on external data provided by the client. Please coordinate with the team regarding data cleaning and preparation.
@@ -40,5 +39,3 @@ Explore the dashboard [here](https://lookerstudio.google.com/u/0/reporting/58cda
   &nbsp;&nbsp;
   <img src="screenshots/page_1_dash.png" width="45%" />
 </p>
-
-
