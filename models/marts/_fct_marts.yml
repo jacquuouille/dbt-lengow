@@ -2,8 +2,7 @@ version: 2
 
 models:
   - name: fct_products_matching
-    description: |
-      Fact table capturing product-level matching between client prices and market prices.
+    description: Fact table capturing product-level matching between client prices and market prices.
       Includes metrics like price difference, price percentage difference, price ratio, and a
       price comparison result (winning/losing/tie) to assess the client's competitive positioning.
     tests:
@@ -28,7 +27,7 @@ models:
                 to: ref('int_products_matching')
                 field: product_id
       - name: title
-        description: Product title or name.
+        description: Product name.
       - name: category
         description: Product category.
       - name: client_price
@@ -38,7 +37,7 @@ models:
               arguments:
                 expression: ">= 0"
       - name: market_price
-        description: Price of the product in the market.
+        description: Price of the product in the market shop.
         tests: 
           - dbt_utils.expression_is_true:
               arguments:
@@ -46,15 +45,15 @@ models:
       - name: client_stock
         description: Number of items available on the client's side.
       - name: market_stock
-        description: Number of items available in the market.
+        description: Number of items available in the market shop.
       - name: price_difference
-        description: Calculating the price difference between the client's price and the market price to identify potential pricing opportunities or discrepancies
+        description: Calculating the price difference between the client's price and the market price to identify potential pricing opportunities or discrepancies.
       - name: price_difference_percentage
         description: Price difference in percentage.
       - name: price_ratio
-        description: Calculating the price ratio to understand how the client's price compares to the market price, with a ratio less than 1 indicating a cheaper price and greater than 1 indicating a more expensive price
+        description: Calculating the price ratio to understand how the client's price compares to the market price, with a ratio less than 1 indicating a cheaper price and greater than 1 indicating a more expensive price.
       - name: price_competitiveness
-        description: Measuring the share of matches where the client product is 'winning' (cheapest) vs 'losing' (more expensive) compared to the market price, providing insights into the client's competitive positioning in the market.
+        description: Measuring the share of matches where the client product is competitive (cheapest) vs overpriced (more expensive) compared to the market price, providing insights into the client's competitive positioning in the market.
         tests:
            - accepted_values:
                 arguments:
@@ -62,28 +61,28 @@ models:
                   values: ['Competitive', 'Overpriced', 'Price Match']  
 
   - name: fct_top_10_least_competitive_product_categories
-    description: Fact table identifying the top 10 least competitive product categories based on the count of 'losing' price competitiveness results.
+    description: Fact table identifying the top 10 least competitive product categories based on the count of overpriced price competitiveness results.
     columns:
       - name: category
         description: Product category.
       - name: noncompetitive_count
-        description: Count of instances where products in the category are 'losing' in terms of price competitiveness, indicating the number of times products in that category are priced higher than the market price, which can help identify areas where the client may be less competitive and may need to adjust pricing strategies. 
+        description: Count of instances where products in the category are overpriced in terms of price competitiveness, which can help identify areas where the client may be less competitive and may need to adjust pricing strategies. 
       - name: rank
-        description: Ranking of product categories based on their non-competitiveness count, with a lower rank indicating a higher count of 'losing' instances, allowing for easy identification of the least competitive categories.
+        description: Ranking of product categories based on their non-competitiveness count, allowing for easy identification of the least competitive categories.
         tests:
           - dbt_utils.expression_is_true:
               arguments:
                 expression: "<= 10" 
 
   - name: fct_top_10_most_competitive_client_products
-    description: Fact table identifying the top 10 most competitive product categories based on the count of 'winning' price competitiveness results.
+    description: Fact table identifying the top 10 most competitive product categories based on the count of competitive price competitiveness results.
     columns:
       - name: category
         description: Product category.
       - name: competitive_count
-        description: Count of instances where products in the category are 'winning' in terms of price competitiveness, indicating the number of times products in that category are priced lower than the market price, which can help identify areas where the client is more competitive and may have a pricing advantage. 
+        description: Count of instances where products in the category are competitive in terms of price competitiveness, which can help identify areas where the client is more competitive and may have a pricing advantage. 
       - name: rank
-        description: Ranking of product categories based on their competitiveness count, with a lower rank indicating a higher count of 'winning' instances, allowing for easy identification of the most competitive categories.
+        description: Ranking of product categories based on their competitiveness count, allowing for easy identification of the most competitive categories.
         tests:
           - dbt_utils.expression_is_true:
               arguments:

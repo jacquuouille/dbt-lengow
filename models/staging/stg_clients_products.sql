@@ -4,6 +4,7 @@
     incremental_strategy='merge'
 ) }}
 
+
 with source as (
 
     select * from {{ source('jaffle', 'clients_products') }}

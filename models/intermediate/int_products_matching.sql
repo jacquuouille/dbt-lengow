@@ -4,6 +4,7 @@
     unique_key=['matching_id']
 ) }}
 
+
 with clients_products as (
 
     select * from {{ ref('stg_clients_products') }}

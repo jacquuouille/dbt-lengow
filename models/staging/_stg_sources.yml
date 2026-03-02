@@ -55,37 +55,37 @@ sources:
           - name: shop_id
             description: The primary key of the shop.
           - name: product_id
-            description: The primary key of the market product.
+            description: The primary key of the product sold in the market shop.
             data_tests:
               - relationships:
                   arguments:
                     to: ref('stg_clients_products')
                     field: product_id
           - name: title
-            description: The title of the market product.
+            description: The name of the product sold in the market shop.
           - name: price
-            description: The price of the market product.
+            description: The price of the product sold in the market shop.
             tests:
               - dbt_utils.expression_is_true:
                   arguments:
                     expression: ">= 0"
           - name: stock_availability
-            description: The stock availability of the market product.
+            description: The stock availability of the product sold in the market shop.
             data_tests:
               - accepted_values:
                   arguments:
                     values: [true, false]
                     quote: false
           - name: is_active
-            description: Whether the market product is active or not.
+            description: Whether the product sold in the market shop is active or not.
             data_tests:
               - accepted_values:
                   arguments:
                     values: [true, false]
                     quote: false
           - name: updated_at
-            description: The timestamp of the last update of the market product.
+            description: The timestamp of the last update of the product sold in the market shop.
             data_tests:
               - not_null
           - name: failed_to_update
-            description: Whether the market product failed to update or not.
+            description: Whether the product sold in the market shop failed to update or not.
