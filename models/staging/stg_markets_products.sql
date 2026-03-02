@@ -15,7 +15,7 @@ transformed as (
     select
         shop_id,
         id as product_id,
-        title as title,
+        title,
         price,
         cast(stock_availability as boolean) as stock_availability,
         cast(is_active as boolean) as is_active,

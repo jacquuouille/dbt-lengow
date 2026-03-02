@@ -33,7 +33,7 @@ metrics as (
             (client_price - market_price) / market_price * 100, 1) as price_difference_percentage,
 
         round(
-            client_price / market_price, 2) as price_ratio,
+            client_price / market_price * 100, 1) as price_index,
         
         case 
             when client_price < market_price then 'Competitive' 

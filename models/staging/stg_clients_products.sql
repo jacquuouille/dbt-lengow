@@ -14,7 +14,7 @@ transformed as (
 
     select
         id as product_id,
-        title as title,
+        title,
         price,
         cast(stock_availability as boolean) as stock_availability,
         main_category,

@@ -9,7 +9,7 @@ competitiveness_products as (
     select
         product_id,
         title, 
-        sum(case when price_competitiveness = 'winning' then 1 else 0 end) as competitive_count,
+        sum(case when price_competitiveness = 'Competitive' then 1 else 0 end) as competitive_count,
     from clients_products
     group by 1, 2
 
