@@ -4,9 +4,10 @@ their prices compare to competitors in the market.
   
 ### To explore lineage and metadata:
 
+```sql
 dbt docs generate
 dbt docs serve
-
+```
 This opens an interactive documentation site with:
 
 model descriptions
