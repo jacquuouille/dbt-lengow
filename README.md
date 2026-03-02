@@ -32,9 +32,9 @@ Explore the dashboard here (additional pages available):
 👉 [Pricing Competitiveness Analysis Dashboard (Looker Studio)](https://lookerstudio.google.com/u/0/reporting/58cda53a-5e0b-46b9-91b5-b6b104ca021d/page/p_79kqjm8d1d)
 
 <p align="center">
-  <img src="screenshots/page__1_dashboard.png" width="45%" />
+  <img src="screenshots/page1_dashboard.png" width="45%" />
   &nbsp;&nbsp;
-  <img src="screenshots/page_2_dashboard.png" width="45%" />
+  <img src="screenshots/page2_dashboard.png" width="45%" />
 </p>
 
 
