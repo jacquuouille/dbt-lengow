@@ -27,6 +27,8 @@ dbt docs serve
 
 ## Exploring Dashboard
 
-
+Check it out here (there is more)
+![Page 1](screenshots/page_1_dashboard.png)
+![Page 2](screenshots/page_2_dashboard.png)
 
 
