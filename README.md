@@ -26,9 +26,10 @@ dbt docs serve
 - This ensures full transparency of the transformation layer and makes it easy for stakeholders and analysts to understand how data is structured and how each model should be used.
 
 ## Exploring Dashboard
-The dashboard is based on external data provided by the client. Please coordinate with the team for data cleaning.
+The dashboard is built on external data provided by the client. Please coordinate with the team regarding data cleaning and preparation.
 
-Check it out here (there is more) 
+Explore the dashboard here (additional pages available):
+👉 [Pricing Competitiveness Analysis Dashboard (Looker Studio)](https://lookerstudio.google.com/u/0/reporting/58cda53a-5e0b-46b9-91b5-b6b104ca021d/page/p_79kqjm8d1d)
 
 <p align="center">
   <img src="screenshots/page__1_dashboard.png" width="45%" />
