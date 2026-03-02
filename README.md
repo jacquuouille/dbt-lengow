@@ -36,9 +36,9 @@ Explore the dashboard [here](https://lookerstudio.google.com/u/0/reporting/58cda
 
 
 <p align="center">
-  <img src="screenshots/page1_dashboard.png" width="45%" />
+  <img src="screenshots/page_2_dash.png" width="45%" />
   &nbsp;&nbsp;
-  <img src="screenshots/page2_dashboard.png" width="45%" />
+  <img src="screenshots/page_1_dash.png" width="45%" />
 </p>
 
 
