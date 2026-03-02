@@ -25,7 +25,7 @@ dbt docs serve
 - Key metrics and transformations applied
 
 ## 📈 Exploring Dashboard
-The dashboard is built on external data provided by the client. Please coordinate with the team regarding data cleaning and preparation.
+The dashboard is based on external data provided by the client. Please coordinate with the team regarding data cleaning and preparation.
 
 Explore the dashboard [here](https://lookerstudio.google.com/u/0/reporting/58cda53a-5e0b-46b9-91b5-b6b104ca021d/page/p_79kqjm8d1d) (additional pages available):
 - 📊 Overview
