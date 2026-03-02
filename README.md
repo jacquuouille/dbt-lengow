@@ -26,13 +26,12 @@ dbt docs serve
 - This ensures full transparency of the transformation layer and makes it easy for stakeholders and analysts to understand how data is structured and how each model should be used.
 
 ## Exploring Dashboard
+The dashboard is based on external data provided by the client. Please coordinate with the team for data cleaning.
 
-Check it out here (there is more)
-![Page 1](screenshots/page_1_dashboard.png)
-![Page 2](screenshots/page_2_dashboard.png)
+Check it out here (there is more) 
 
 <p align="center">
-  <img src="screenshots/page_1_dashboard.png" width="45%" />
+  <img src="screenshots/page__1_dashboard.png" width="45%" />
   &nbsp;&nbsp;
   <img src="screenshots/page_2_dashboard.png" width="45%" />
 </p>
