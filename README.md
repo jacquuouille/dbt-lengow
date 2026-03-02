@@ -12,9 +12,6 @@ dbt docs generate
 dbt docs serve
 ```
 
-- The `dbt docs generate` command builds the project documentation based on the models, sources, tests, and descriptions defined in the project.
-- The `dbt docs serve` command launches a local web server where you can interactively explore the documentation in your browser.
-
 ### The documentation interface allows you to:
 - Visualize data lineage (upstream sources and downstream dependencies)
 - Explore model relationships
